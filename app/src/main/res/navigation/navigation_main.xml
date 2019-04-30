@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_main"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/enter_orgname_dest">
+
+    <fragment
+        android:id="@+id/enter_orgname_dest"
+        android:name="com.alvindizon.eelog.features.login.EnterOrgNameFragment"
+        android:label="fragment_enter_orgname"
+        tools:layout="@layout/fragment_enter_forum"/>
+</navigation>
