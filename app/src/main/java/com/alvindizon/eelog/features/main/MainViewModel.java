@@ -1,6 +1,6 @@
 package com.alvindizon.eelog.features.main;
 
-import androidx.lifecycle.ViewModel;
+import com.alvindizon.eelog.core.viewmodel.BaseViewModel;
 
-public class MainViewModel extends ViewModel {
+public class MainViewModel extends BaseViewModel {
 }

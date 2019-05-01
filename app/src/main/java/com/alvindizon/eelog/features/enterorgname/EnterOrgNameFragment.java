@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.features.login;
+package com.alvindizon.eelog.features.enterorgname;
 
 import androidx.lifecycle.ViewModelProviders;
 

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.alvindizon.eelog.features.login.EnterOrgNameViewModel" />
+            type="com.alvindizon.eelog.features.enterorgname.EnterOrgNameViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

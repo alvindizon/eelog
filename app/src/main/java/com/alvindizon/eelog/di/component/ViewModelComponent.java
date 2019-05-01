@@ -2,7 +2,7 @@ package com.alvindizon.eelog.di.component;
 
 import com.alvindizon.eelog.di.module.ViewModelModule;
 import com.alvindizon.eelog.features.main.MainActivity;
-import com.alvindizon.eelog.features.login.EnterOrgNameFragment;
+import com.alvindizon.eelog.features.enterorgname.EnterOrgNameFragment;
 
 import dagger.Subcomponent;
 
