@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.ui;
+package com.alvindizon.eelog.core.ui;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.framework;
+package com.alvindizon.eelog.core.viewmodel;
 
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;

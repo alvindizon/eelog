@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.features;
+package com.alvindizon.eelog.features.main;
 
 import androidx.lifecycle.ViewModel;
 

@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModelProviders;
 import com.alvindizon.eelog.BR;
 import com.alvindizon.eelog.R;
 import com.alvindizon.eelog.databinding.FragmentEnterForumBinding;
-import com.alvindizon.eelog.framework.ViewModelFactory;
-import com.alvindizon.eelog.ui.BaseFragment;
+import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
+import com.alvindizon.eelog.core.ui.BaseFragment;
 
 import javax.inject.Inject;
 

@@ -2,9 +2,9 @@ package com.alvindizon.eelog.di.module;
 
 import androidx.lifecycle.ViewModel;
 
-import com.alvindizon.eelog.features.MainViewModel;
+import com.alvindizon.eelog.features.main.MainViewModel;
 import com.alvindizon.eelog.features.login.EnterOrgNameViewModel;
-import com.alvindizon.eelog.framework.ViewModelFactory;
+import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

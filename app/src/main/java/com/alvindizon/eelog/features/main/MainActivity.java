@@ -1,11 +1,11 @@
-package com.alvindizon.eelog.features;
+package com.alvindizon.eelog.features.main;
 
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alvindizon.eelog.R;
 import com.alvindizon.eelog.databinding.ActivityMainBinding;
-import com.alvindizon.eelog.framework.ViewModelFactory;
-import com.alvindizon.eelog.ui.BaseActivity;
+import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
+import com.alvindizon.eelog.core.ui.BaseActivity;
 
 import javax.inject.Inject;
 
