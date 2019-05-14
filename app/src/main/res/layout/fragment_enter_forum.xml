@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.alvindizon.eelog.features.enterorgname.EnterOrgNameViewModel" />
+            type="com.alvindizon.eelog.features.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,35 +16,78 @@
         android:fitsSystemWindows="true">
 
         <TextView
-            android:id="@+id/label_enter"
+            android:id="@+id/label_enter_org"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/please_enter_org_name"
             android:textAlignment="viewStart"
-            app:layout_constraintBottom_toTopOf="@+id/edit_forum"
+            app:layout_constraintBottom_toTopOf="@+id/edit_org"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/edit_forum"
+            android:id="@+id/edit_org"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="300dp"
+            android:layout_marginBottom="32dp"
+            android:maxLines="1"
+            app:layout_constraintBottom_toTopOf="@+id/label_enter_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/label_enter_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_username"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/edit_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:maxLines="1"
+            app:layout_constraintBottom_toTopOf="@+id/label_enter_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/label_enter_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/please_enter_password"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toTopOf="@+id/edit_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="244dp"
+            android:maxLines="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/label_continue"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_forum" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

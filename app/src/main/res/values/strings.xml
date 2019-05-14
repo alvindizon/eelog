@@ -1,5 +1,7 @@
 <resources>
     <string translatable="false" name="app_name">eelog</string>
     <string name="please_enter_org_name">Please enter organization name</string>
+    <string name="please_enter_username">Please enter your username</string>
+    <string name="please_enter_password">Please enter your password</string>
     <string name="label_continue">Continue</string>
 </resources>

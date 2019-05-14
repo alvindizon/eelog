@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.features.enterorgname;
+package com.alvindizon.eelog.features.login;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -10,7 +10,7 @@ import com.alvindizon.eelog.core.ui.BaseFragment;
 
 import javax.inject.Inject;
 
-public class EnterOrgNameFragment extends BaseFragment<FragmentEnterForumBinding, EnterOrgNameViewModel> {
+public class LoginFragment extends BaseFragment<FragmentEnterForumBinding, LoginViewModel> {
 
     @Inject
     ViewModelFactory viewModelFactory;
@@ -26,8 +26,8 @@ public class EnterOrgNameFragment extends BaseFragment<FragmentEnterForumBinding
     }
 
     @Override
-    public EnterOrgNameViewModel getViewModel() {
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(EnterOrgNameViewModel.class);
+    public LoginViewModel getViewModel() {
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel.class);
         return viewModel;
     }
 

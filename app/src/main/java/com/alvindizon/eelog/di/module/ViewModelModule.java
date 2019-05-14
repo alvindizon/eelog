@@ -3,7 +3,7 @@ package com.alvindizon.eelog.di.module;
 import androidx.lifecycle.ViewModel;
 
 import com.alvindizon.eelog.features.main.MainViewModel;
-import com.alvindizon.eelog.features.enterorgname.EnterOrgNameViewModel;
+import com.alvindizon.eelog.features.login.LoginViewModel;
 import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
 
 import java.lang.annotation.ElementType;
@@ -43,8 +43,8 @@ public class ViewModelModule {
 
     @Provides
     @IntoMap
-    @ViewModelKey(EnterOrgNameViewModel.class)
+    @ViewModelKey(LoginViewModel.class)
     ViewModel provideEnterForumNameViewModel() {
-        return new EnterOrgNameViewModel();
+        return new LoginViewModel();
     }
 }
