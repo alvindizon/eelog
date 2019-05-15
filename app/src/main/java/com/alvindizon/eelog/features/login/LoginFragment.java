@@ -1,23 +1,30 @@
 package com.alvindizon.eelog.features.login;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.alvindizon.eelog.BR;
 import com.alvindizon.eelog.R;
-import com.alvindizon.eelog.databinding.FragmentEnterForumBinding;
-import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
 import com.alvindizon.eelog.core.ui.BaseFragment;
+import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
+import com.alvindizon.eelog.databinding.FragmentLoginBinding;
+import com.alvindizon.eelog.network.model.NetworkStatus;
 
 import javax.inject.Inject;
 
-public class LoginFragment extends BaseFragment<FragmentEnterForumBinding, LoginViewModel> {
+public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewModel> {
 
     @Inject
     ViewModelFactory viewModelFactory;
 
     @Override
     public int getLayoutId() {
-        return R.layout.fragment_enter_forum;
+        return R.layout.fragment_login;
     }
 
     @Override
@@ -36,4 +43,17 @@ public class LoginFragment extends BaseFragment<FragmentEnterForumBinding, Login
         getViewModelComponent().inject(this);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        viewModel.loginStatus.observe(this, this::handleStatus);
+    }
+
+    private void handleStatus(NetworkStatus networkStatus) {
+
+        if (networkStatus == NetworkStatus.SUCCESS) {
+            Toast.makeText(requireContext(), "login success", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }

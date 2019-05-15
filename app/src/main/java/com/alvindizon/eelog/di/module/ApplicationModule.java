@@ -3,6 +3,12 @@ package com.alvindizon.eelog.di.module;
 import android.app.Application;
 import android.content.Context;
 
+import com.alvindizon.eelog.network.interceptor.ConnectivityInterceptor;
+import com.alvindizon.eelog.network.interceptor.TokenInterceptor;
+import com.alvindizon.eelog.network.service.ApiService;
+import com.alvindizon.eelog.network.service.SessionRepository;
+import com.alvindizon.eelog.prefs.PreferenceRepository;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -27,7 +33,16 @@ public class ApplicationModule {
         return mApplication.getApplicationContext();
     }
 
+
     @Provides
+    @Singleton
+    PreferenceRepository providePreferenceRepository(Context context) {
+        return new PreferenceRepository(context);
+    }
+
+
+    @Provides
+    @Singleton
     HttpLoggingInterceptor provideHttpLoggingInterceptor() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -36,9 +51,25 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    OkHttpClient provideOkHttpClient(HttpLoggingInterceptor httpLoggingInterceptor) {
+    TokenInterceptor provideTokenInterceptor(PreferenceRepository preferenceRepository) {
+        return new TokenInterceptor(preferenceRepository);
+    }
+
+    @Provides
+    @Singleton
+    ConnectivityInterceptor provideConnectivityInterceptor(Context context) {
+        return new ConnectivityInterceptor(context);
+    }
+
+    @Provides
+    @Singleton
+    OkHttpClient provideOkHttpClient(HttpLoggingInterceptor httpLoggingInterceptor,
+                                     ConnectivityInterceptor connectivityInterceptor,
+                                     TokenInterceptor tokenInterceptor) {
         return new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
+                .addInterceptor(connectivityInterceptor)
+                .addInterceptor(tokenInterceptor)
                 .build();
     }
 
@@ -52,4 +83,18 @@ public class ApplicationModule {
                 .client(okHttpClient)
                 .build();
     }
+
+    @Provides
+    @Singleton
+    ApiService provideApiService(Retrofit retrofit) {
+        return retrofit.create(ApiService.class);
+    }
+
+    @Provides
+    @Singleton
+    SessionRepository provideSessionRepository(ApiService apiService,
+                                               PreferenceRepository preferenceRepository) {
+        return new SessionRepository(apiService, preferenceRepository);
+    }
+
 }

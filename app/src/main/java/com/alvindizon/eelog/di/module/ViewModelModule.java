@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 import com.alvindizon.eelog.features.main.MainViewModel;
 import com.alvindizon.eelog.features.login.LoginViewModel;
 import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
+import com.alvindizon.eelog.network.service.SessionRepository;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -44,7 +45,7 @@ public class ViewModelModule {
     @Provides
     @IntoMap
     @ViewModelKey(LoginViewModel.class)
-    ViewModel provideEnterForumNameViewModel() {
-        return new LoginViewModel();
+    ViewModel provideLoginViewModel(SessionRepository sessionRepository) {
+        return new LoginViewModel(sessionRepository);
     }
 }

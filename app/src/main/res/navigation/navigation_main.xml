@@ -8,5 +8,5 @@
         android:id="@+id/enter_orgname_dest"
         android:name="com.alvindizon.eelog.features.login.LoginFragment"
         android:label="fragment_enter_orgname"
-        tools:layout="@layout/fragment_enter_forum"/>
+        tools:layout="@layout/fragment_login"/>
 </navigation>
