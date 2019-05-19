@@ -65,20 +65,14 @@ public class LoginViewModel extends BaseViewModel {
         } else if(throwable instanceof HttpException) {
             HttpException httpException = (HttpException) throwable;
             String errorMsg = "Error: ";
-            String actualError = "";
-            try {
-                String json = httpException.response().errorBody().string();
-//                if(!TextUtils.isEmpty(json)){
-//                    String errorBody = StringUtils.getJsonValueFromName(json, "error");
-//                    actualError = StringUtils.getJsonValueFromName(json, "value");
-//                    Log.d(TAG, "actualError: " + actualError);
-//                } else {
-                    actualError = "Please try again.";
-//                }
-            } catch (Exception e) {
-                Log.d(TAG, "error getting json body");
-                e.printStackTrace();
+            String actualError;
+
+            if(httpException.code() == 404) {
+                actualError = "Organization not found.";
+            } else {
+                actualError = "Please try again.";
             }
+
             errorText.set(errorMsg + actualError);
             loginStatus.setValue(NetworkStatus.API_ERROR);
         } else if(throwable instanceof SocketTimeoutException) {
