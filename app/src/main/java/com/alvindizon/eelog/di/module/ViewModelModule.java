@@ -2,6 +2,8 @@ package com.alvindizon.eelog.di.module;
 
 import androidx.lifecycle.ViewModel;
 
+import com.alvindizon.eelog.data.network.service.ForumRepository;
+import com.alvindizon.eelog.ui.screens.forumlist.ForumViewModel;
 import com.alvindizon.eelog.ui.screens.main.MainViewModel;
 import com.alvindizon.eelog.ui.screens.login.LoginViewModel;
 import com.alvindizon.eelog.ui.base.viewmodel.ViewModelFactory;
@@ -47,5 +49,12 @@ public class ViewModelModule {
     @ViewModelKey(LoginViewModel.class)
     ViewModel provideLoginViewModel(SessionRepository sessionRepository) {
         return new LoginViewModel(sessionRepository);
+    }
+
+    @Provides
+    @IntoMap
+    @ViewModelKey(ForumViewModel.class)
+    ViewModel provideForumViewModel(ForumRepository forumRepository) {
+        return new ForumViewModel(forumRepository);
     }
 }

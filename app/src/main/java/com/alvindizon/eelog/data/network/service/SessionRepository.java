@@ -3,9 +3,11 @@ package com.alvindizon.eelog.data.network.service;
 import android.util.Base64;
 
 import com.alvindizon.eelog.R;
+import com.alvindizon.eelog.data.network.response.D;
+import com.alvindizon.eelog.data.network.response.LoginResponse;
 import com.alvindizon.eelog.data.prefs.PreferenceRepository;
 
-import io.reactivex.Completable;
+import io.reactivex.Single;
 
 public class SessionRepository {
 
@@ -17,7 +19,7 @@ public class SessionRepository {
         this.preferenceRepository = preferenceRepository;
     }
 
-    public Completable sendLoginRequest(String orgname, String username, String password) {
+    public Single<LoginResponse> sendLoginRequest(String orgname, String username, String password) {
         StringBuilder sb = new StringBuilder("https://");
         sb.append(orgname);
         sb.append(".ryver.com/api/1/odata.svc/User.Login()");
@@ -26,7 +28,7 @@ public class SessionRepository {
         // save authorization to shared preferences
         preferenceRepository.set(R.string.key_auth, authorization);
 
-        return apiService.sendLoginRequest(sb.toString()).ignoreElement();
+        return apiService.sendLoginRequest(sb.toString());
     }
 
     private String generateAuthorization(String username, String password) {

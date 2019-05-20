@@ -1,5 +1,5 @@
 
-package com.alvindizon.eelog.data.network.model;
+package com.alvindizon.eelog.data.network.response;
 
 import com.squareup.moshi.Json;
 
@@ -16,4 +16,10 @@ public class LoginResponse {
         this.d = d;
     }
 
+    @Override
+    public String toString() {
+        return "LoginResponse{" +
+                "d=" + d +
+                '}';
+    }
 }

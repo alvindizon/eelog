@@ -6,6 +6,7 @@ import android.content.Context;
 import com.alvindizon.eelog.data.network.interceptor.ConnectivityInterceptor;
 import com.alvindizon.eelog.data.network.interceptor.TokenInterceptor;
 import com.alvindizon.eelog.data.network.service.ApiService;
+import com.alvindizon.eelog.data.network.service.ForumRepository;
 import com.alvindizon.eelog.data.network.service.SessionRepository;
 import com.alvindizon.eelog.data.prefs.PreferenceRepository;
 
@@ -95,6 +96,12 @@ public class ApplicationModule {
     SessionRepository provideSessionRepository(ApiService apiService,
                                                PreferenceRepository preferenceRepository) {
         return new SessionRepository(apiService, preferenceRepository);
+    }
+
+    @Provides
+    @Singleton
+    ForumRepository provideForumRepository(ApiService apiService) {
+        return new ForumRepository(apiService);
     }
 
 }

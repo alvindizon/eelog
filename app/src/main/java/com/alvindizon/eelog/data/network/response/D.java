@@ -1,5 +1,5 @@
 
-package com.alvindizon.eelog.data.network.model;
+package com.alvindizon.eelog.data.network.response;
 
 import java.util.List;
 import com.squareup.moshi.Json;
@@ -157,4 +157,24 @@ public class D {
         this.loginMode = loginMode;
     }
 
+    @Override
+    public String toString() {
+        return "D{" +
+                "username='" + username + '\'' +
+                ", id=" + id +
+                ", uniqueId='" + uniqueId + '\'' +
+                ", sessionId='" + sessionId + '\'' +
+                ", instanceId='" + instanceId + '\'' +
+                ", instanceName='" + instanceName + '\'' +
+                ", newUser=" + newUser +
+                ", type='" + type + '\'' +
+                ", roles=" + roles +
+                ", descriptor='" + descriptor + '\'' +
+                ", services=" + services +
+                ", configuration=" + configuration +
+                ", features=" + features +
+                ", subscriptions=" + subscriptions +
+                ", loginMode=" + loginMode +
+                '}';
+    }
 }

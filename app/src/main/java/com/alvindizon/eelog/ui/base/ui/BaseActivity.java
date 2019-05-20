@@ -84,4 +84,11 @@ public abstract class BaseActivity<B extends ViewDataBinding, V extends ViewMode
         return binding;
     }
 
+    public NavController getNavController() {
+        return navController;
+    }
+
+    public V getMainViewModel() {
+        return viewModel;
+    }
 }

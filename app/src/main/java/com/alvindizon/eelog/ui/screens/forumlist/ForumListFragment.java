@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.ui.screens.login;
+package com.alvindizon.eelog.ui.screens.forumlist;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,20 +11,19 @@ import androidx.lifecycle.ViewModelProviders;
 import com.alvindizon.eelog.BR;
 import com.alvindizon.eelog.R;
 import com.alvindizon.eelog.data.network.response.NetworkStatus;
-import com.alvindizon.eelog.databinding.FragmentLoginBinding;
+import com.alvindizon.eelog.databinding.FragmentForumListBinding;
 import com.alvindizon.eelog.ui.base.ui.BaseFragment;
 import com.alvindizon.eelog.ui.base.viewmodel.ViewModelFactory;
 
 import javax.inject.Inject;
 
-public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewModel> {
-
+public class ForumListFragment extends BaseFragment<FragmentForumListBinding, ForumViewModel> {
     @Inject
     ViewModelFactory viewModelFactory;
 
     @Override
     public int getLayoutId() {
-        return R.layout.fragment_login;
+        return R.layout.fragment_forum_list;
     }
 
     @Override
@@ -33,8 +32,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
     }
 
     @Override
-    public LoginViewModel getViewModel() {
-        viewModel = ViewModelProviders.of(this, viewModelFactory).get(LoginViewModel.class);
+    public ForumViewModel getViewModel() {
+        viewModel = ViewModelProviders.of(this, viewModelFactory).get(ForumViewModel.class);
         return viewModel;
     }
 
@@ -46,16 +45,13 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewModel.loginStatus.observe(this, this::handleStatus);
+        viewModel.setInstance(mainViewModel.getCurrentInstance());
+        viewModel.listForumStatus.observe(this, this::handleStatus);
     }
 
     private void handleStatus(NetworkStatus networkStatus) {
-
         if (networkStatus == NetworkStatus.SUCCESS) {
-            Toast.makeText(requireContext(), "login success", Toast.LENGTH_SHORT).show();
-            mainViewModel.saveCurrentInstance(viewModel.getInstance());
-            navController.navigate(R.id.action_login_dest_to_forum_list_dest);
+            Toast.makeText(requireContext(), "list forum success", Toast.LENGTH_SHORT).show();
         }
-
     }
 }

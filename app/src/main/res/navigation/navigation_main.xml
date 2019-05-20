@@ -2,11 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_main"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/enter_orgname_dest">
+    app:startDestination="@id/login_dest">
 
     <fragment
-        android:id="@+id/enter_orgname_dest"
+        android:id="@+id/login_dest"
         android:name="com.alvindizon.eelog.ui.screens.login.LoginFragment"
-        android:label="fragment_enter_orgname"
-        tools:layout="@layout/fragment_login"/>
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_dest_to_forum_list_dest"
+            app:destination="@id/forum_list_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/forum_list_dest"
+        android:name="com.alvindizon.eelog.ui.screens.forumlist.ForumListFragment"
+        android:label="fragment_forum_list"
+        tools:layout="@layout/fragment_forum_list"/>
 </navigation>

@@ -8,6 +8,10 @@
             name="viewModel"
             type="com.alvindizon.eelog.ui.screens.login.LoginViewModel" />
 
+        <variable
+            name="mainViewModel"
+            type="com.alvindizon.eelog.ui.screens.main.MainViewModel" />
+
         <import type="android.view.View"/>
     </data>
 

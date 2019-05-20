@@ -1,12 +1,18 @@
 package com.alvindizon.eelog.ui.screens.login;
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 import androidx.databinding.ObservableField;
 import androidx.lifecycle.MutableLiveData;
 
-import com.alvindizon.eelog.ui.base.viewmodel.BaseViewModel;
 import com.alvindizon.eelog.data.network.exception.NoNetworkException;
-import com.alvindizon.eelog.data.network.model.NetworkStatus;
+import com.alvindizon.eelog.data.network.model.Instance;
+import com.alvindizon.eelog.data.network.response.D;
+import com.alvindizon.eelog.data.network.response.LoginResponse;
+import com.alvindizon.eelog.data.network.response.NetworkStatus;
 import com.alvindizon.eelog.data.network.service.SessionRepository;
+import com.alvindizon.eelog.ui.base.viewmodel.BaseViewModel;
 
 import java.net.SocketTimeoutException;
 
@@ -26,6 +32,8 @@ public class LoginViewModel extends BaseViewModel {
     public ObservableField<Boolean> buttonVisible = new ObservableField<>(true);
     public MutableLiveData<NetworkStatus> loginStatus = new MutableLiveData<>();
 
+    private Instance instance;
+
     public LoginViewModel(SessionRepository sessionRepository) {
         this.sessionRepository = sessionRepository;
     }
@@ -43,12 +51,25 @@ public class LoginViewModel extends BaseViewModel {
                     progressBarVisible.set(true);
                     buttonVisible.set(false);
                 })
-                .subscribe(() -> {
+                .subscribe(response -> {
                     progressBarVisible.set(false);
                     buttonVisible.set(true);
                     errorText.set("");
+                    transformToInstance(response);
                     loginStatus.setValue(NetworkStatus.SUCCESS);
                 }, this::handleError));
+    }
+
+    private void transformToInstance(LoginResponse response) {
+        instance = new Instance();
+        instance.setInstanceId(response.getD().getInstanceId());
+        instance.setInstanceName(response.getD().getInstanceName());
+        Log.d(TAG, instance.toString());
+    }
+
+    @NonNull
+    public Instance getInstance() {
+        return instance;
     }
 
     private void handleError(Throwable throwable) {

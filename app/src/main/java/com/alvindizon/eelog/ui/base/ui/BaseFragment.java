@@ -1,5 +1,6 @@
 package com.alvindizon.eelog.ui.base.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +14,18 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.NavController;
 
 import com.alvindizon.eelog.EelogApp;
 import com.alvindizon.eelog.di.component.ApplicationComponent;
 import com.alvindizon.eelog.di.component.ViewModelComponent;
+import com.alvindizon.eelog.ui.screens.main.MainViewModel;
 
 public abstract class BaseFragment<B extends ViewDataBinding, V extends ViewModel> extends Fragment {
     protected B binding;
     protected V viewModel;
+    protected MainViewModel mainViewModel;
+    protected NavController navController;
 
     @LayoutRes
     public abstract int getLayoutId();
@@ -65,8 +70,14 @@ public abstract class BaseFragment<B extends ViewDataBinding, V extends ViewMode
         binding.executePendingBindings();
     }
 
-    public B getBinding() {
-        return binding;
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        navController = getBaseActivity().getNavController();
+        mainViewModel = ((MainViewModel) getBaseActivity().getMainViewModel());
     }
 
+    protected BaseActivity getBaseActivity() {
+        return ((BaseActivity) requireActivity());
+    }
 }
