@@ -3,11 +3,11 @@ package com.alvindizon.eelog.di.module;
 import android.app.Application;
 import android.content.Context;
 
-import com.alvindizon.eelog.network.interceptor.ConnectivityInterceptor;
-import com.alvindizon.eelog.network.interceptor.TokenInterceptor;
-import com.alvindizon.eelog.network.service.ApiService;
-import com.alvindizon.eelog.network.service.SessionRepository;
-import com.alvindizon.eelog.prefs.PreferenceRepository;
+import com.alvindizon.eelog.data.network.interceptor.ConnectivityInterceptor;
+import com.alvindizon.eelog.data.network.interceptor.TokenInterceptor;
+import com.alvindizon.eelog.data.network.service.ApiService;
+import com.alvindizon.eelog.data.network.service.SessionRepository;
+import com.alvindizon.eelog.data.prefs.PreferenceRepository;
 
 import javax.inject.Singleton;
 

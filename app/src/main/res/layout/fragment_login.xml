@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.alvindizon.eelog.features.login.LoginViewModel" />
+            type="com.alvindizon.eelog.ui.screens.login.LoginViewModel" />
 
         <import type="android.view.View"/>
     </data>

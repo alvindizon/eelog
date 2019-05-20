@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/enter_orgname_dest"
-        android:name="com.alvindizon.eelog.features.login.LoginFragment"
+        android:name="com.alvindizon.eelog.ui.screens.login.LoginFragment"
         android:label="fragment_enter_orgname"
         tools:layout="@layout/fragment_login"/>
 </navigation>

@@ -2,10 +2,10 @@ package com.alvindizon.eelog.di.module;
 
 import androidx.lifecycle.ViewModel;
 
-import com.alvindizon.eelog.features.main.MainViewModel;
-import com.alvindizon.eelog.features.login.LoginViewModel;
-import com.alvindizon.eelog.core.viewmodel.ViewModelFactory;
-import com.alvindizon.eelog.network.service.SessionRepository;
+import com.alvindizon.eelog.ui.screens.main.MainViewModel;
+import com.alvindizon.eelog.ui.screens.login.LoginViewModel;
+import com.alvindizon.eelog.ui.base.viewmodel.ViewModelFactory;
+import com.alvindizon.eelog.data.network.service.SessionRepository;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
