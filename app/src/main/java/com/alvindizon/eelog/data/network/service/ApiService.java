@@ -1,7 +1,6 @@
 package com.alvindizon.eelog.data.network.service;
 
-import com.alvindizon.eelog.data.network.response.D;
-import com.alvindizon.eelog.data.network.response.LoginResponse;
+import com.alvindizon.eelog.data.network.response.login.LoginResponse;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;

@@ -3,8 +3,7 @@ package com.alvindizon.eelog.data.network.service;
 import android.util.Base64;
 
 import com.alvindizon.eelog.R;
-import com.alvindizon.eelog.data.network.response.D;
-import com.alvindizon.eelog.data.network.response.LoginResponse;
+import com.alvindizon.eelog.data.network.response.login.LoginResponse;
 import com.alvindizon.eelog.data.prefs.PreferenceRepository;
 
 import io.reactivex.Single;

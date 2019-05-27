@@ -8,9 +8,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.alvindizon.eelog.data.network.exception.NoNetworkException;
 import com.alvindizon.eelog.data.network.model.Instance;
-import com.alvindizon.eelog.data.network.response.D;
-import com.alvindizon.eelog.data.network.response.LoginResponse;
-import com.alvindizon.eelog.data.network.response.NetworkStatus;
+import com.alvindizon.eelog.data.network.response.login.LoginResponse;
+import com.alvindizon.eelog.data.network.response.login.NetworkStatus;
 import com.alvindizon.eelog.data.network.service.SessionRepository;
 import com.alvindizon.eelog.ui.base.viewmodel.BaseViewModel;
 

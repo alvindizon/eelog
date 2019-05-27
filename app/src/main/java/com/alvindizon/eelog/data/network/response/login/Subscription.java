@@ -1,5 +1,5 @@
 
-package com.alvindizon.eelog.data.network.response;
+package com.alvindizon.eelog.data.network.response.login;
 
 import com.squareup.moshi.Json;
 

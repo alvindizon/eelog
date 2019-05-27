@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.alvindizon.eelog.BR;
 import com.alvindizon.eelog.R;
-import com.alvindizon.eelog.data.network.response.NetworkStatus;
+import com.alvindizon.eelog.data.network.response.login.NetworkStatus;
 import com.alvindizon.eelog.databinding.FragmentForumListBinding;
 import com.alvindizon.eelog.ui.base.ui.BaseFragment;
 import com.alvindizon.eelog.ui.base.viewmodel.ViewModelFactory;

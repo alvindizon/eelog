@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.alvindizon.eelog.data.network.exception.NoNetworkException;
 import com.alvindizon.eelog.data.network.model.Instance;
-import com.alvindizon.eelog.data.network.response.NetworkStatus;
+import com.alvindizon.eelog.data.network.response.login.NetworkStatus;
 import com.alvindizon.eelog.data.network.service.ForumRepository;
 import com.alvindizon.eelog.ui.base.viewmodel.BaseViewModel;
 

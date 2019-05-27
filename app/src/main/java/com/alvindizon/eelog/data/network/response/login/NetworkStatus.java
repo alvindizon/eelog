@@ -1,4 +1,4 @@
-package com.alvindizon.eelog.data.network.response;
+package com.alvindizon.eelog.data.network.response.login;
 
 public enum NetworkStatus {
     NONE,
