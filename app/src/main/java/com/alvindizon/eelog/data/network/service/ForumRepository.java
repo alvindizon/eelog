@@ -1,6 +1,8 @@
 package com.alvindizon.eelog.data.network.service;
 
-import io.reactivex.Completable;
+import com.alvindizon.eelog.data.network.response.listforum.ListForumResponse;
+
+import io.reactivex.Single;
 
 public class ForumRepository {
 
@@ -10,12 +12,12 @@ public class ForumRepository {
         this.apiService = apiService;
     }
 
-    public Completable getForums(String instanceName) {
+    public Single<ListForumResponse> getForums(String instanceName) {
         StringBuilder sb = new StringBuilder("https://");
         sb.append(instanceName);
         sb.append(".ryver.com/api/1/odata.svc/forums");
 
-        return apiService.getForums(sb.toString()).ignoreElement();
+        return apiService.getForums(sb.toString());
     }
 
 }

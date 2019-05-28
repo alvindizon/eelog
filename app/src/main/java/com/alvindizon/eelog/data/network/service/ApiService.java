@@ -1,5 +1,6 @@
 package com.alvindizon.eelog.data.network.service;
 
+import com.alvindizon.eelog.data.network.response.listforum.ListForumResponse;
 import com.alvindizon.eelog.data.network.response.login.LoginResponse;
 
 import io.reactivex.Single;
@@ -16,6 +17,6 @@ public interface ApiService {
 
     @Headers("Accept: application/json")
     @GET
-    Single<String> getForums(@Url String url);
+    Single<ListForumResponse> getForums(@Url String url);
 
 }
