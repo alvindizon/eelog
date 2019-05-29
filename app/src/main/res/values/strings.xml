@@ -4,4 +4,6 @@
     <string name="please_enter_username">Please enter your username</string>
     <string name="please_enter_password">Please enter your password</string>
     <string name="label_continue">Continue</string>
+    <string name="label_get_forums">Get forums</string>
+    <string name="label_list_users">List all users</string>
 </resources>

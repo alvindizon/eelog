@@ -10,12 +10,21 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_login_dest_to_forum_list_dest"
-            app:destination="@id/forum_list_dest" />
+            android:id="@+id/action_login_dest_to_menu_dest"
+            app:destination="@id/menu_dest" />
     </fragment>
     <fragment
         android:id="@+id/forum_list_dest"
         android:name="com.alvindizon.eelog.ui.screens.forumlist.ForumListFragment"
         android:label="fragment_forum_list"
         tools:layout="@layout/fragment_forum_list"/>
+    <fragment
+        android:id="@+id/menu_dest"
+        android:name="com.alvindizon.eelog.ui.screens.mainmenu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menu_dest_to_forum_list_dest"
+            app:destination="@id/forum_list_dest" />
+    </fragment>
 </navigation>

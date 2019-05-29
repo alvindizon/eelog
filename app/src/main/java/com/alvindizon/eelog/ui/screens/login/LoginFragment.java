@@ -54,7 +54,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
         if (networkStatus == NetworkStatus.SUCCESS) {
             Toast.makeText(requireContext(), "login success", Toast.LENGTH_SHORT).show();
             mainViewModel.saveCurrentInstance(viewModel.getInstance());
-            navController.navigate(R.id.action_login_dest_to_forum_list_dest);
+            navController.navigate(R.id.action_login_dest_to_menu_dest);
         }
 
     }
