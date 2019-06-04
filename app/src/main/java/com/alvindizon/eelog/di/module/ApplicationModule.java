@@ -8,6 +8,7 @@ import com.alvindizon.eelog.data.network.interceptor.TokenInterceptor;
 import com.alvindizon.eelog.data.network.service.ApiService;
 import com.alvindizon.eelog.data.network.service.ForumRepository;
 import com.alvindizon.eelog.data.network.service.SessionRepository;
+import com.alvindizon.eelog.data.network.service.UserRepository;
 import com.alvindizon.eelog.data.prefs.PreferenceRepository;
 
 import javax.inject.Singleton;
@@ -102,6 +103,12 @@ public class ApplicationModule {
     @Singleton
     ForumRepository provideForumRepository(ApiService apiService) {
         return new ForumRepository(apiService);
+    }
+
+    @Provides
+    @Singleton
+    UserRepository provideUserRepository(ApiService apiService) {
+        return new UserRepository(apiService);
     }
 
 }

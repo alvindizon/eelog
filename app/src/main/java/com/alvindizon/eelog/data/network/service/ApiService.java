@@ -19,4 +19,8 @@ public interface ApiService {
     @GET
     Single<ListForumResponse> getForums(@Url String url);
 
+    @Headers("Accept: application/json")
+    @GET
+    Single<String> getUsers(@Url String url);
+
 }

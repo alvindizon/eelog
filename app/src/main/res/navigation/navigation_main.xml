@@ -26,5 +26,13 @@
         <action
             android:id="@+id/action_menu_dest_to_forum_list_dest"
             app:destination="@id/forum_list_dest" />
+        <action
+            android:id="@+id/action_menu_dest_to_users_dest"
+            app:destination="@id/users_dest" />
     </fragment>
+    <fragment
+        android:id="@+id/users_dest"
+        android:name="com.alvindizon.eelog.ui.screens.users.UsersFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_users"/>
 </navigation>

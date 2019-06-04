@@ -46,6 +46,7 @@ public class MenuFragment extends BaseFragment<FragmentMenuBinding, MainMenuView
 
         viewModel.listUserClick.observe(this, clicked -> {
             // navigate to user list fragment
+            navController.navigate(R.id.action_menu_dest_to_users_dest);
         });
     }
 }
