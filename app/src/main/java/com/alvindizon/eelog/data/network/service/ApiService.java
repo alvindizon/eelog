@@ -2,6 +2,7 @@ package com.alvindizon.eelog.data.network.service;
 
 import com.alvindizon.eelog.data.network.response.listforum.ListForumResponse;
 import com.alvindizon.eelog.data.network.response.login.LoginResponse;
+import com.alvindizon.eelog.data.network.response.users.UserListResponse;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
@@ -21,6 +22,6 @@ public interface ApiService {
 
     @Headers("Accept: application/json")
     @GET
-    Single<String> getUsers(@Url String url);
+    Single<UserListResponse> getUsers(@Url String url);
 
 }

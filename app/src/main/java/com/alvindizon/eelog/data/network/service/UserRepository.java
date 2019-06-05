@@ -1,5 +1,7 @@
 package com.alvindizon.eelog.data.network.service;
 
+import com.alvindizon.eelog.data.network.response.users.UserListResponse;
+
 import io.reactivex.Single;
 
 public class UserRepository {
@@ -10,7 +12,7 @@ public class UserRepository {
         this.apiService = apiService;
     }
 
-    public Single<String> getUsers(String instanceName) {
+    public Single<UserListResponse> getUsers(String instanceName) {
         StringBuilder sb = new StringBuilder("https://");
         sb.append(instanceName);
         sb.append(".ryver.com/api/1/odata.svc/users");

@@ -50,7 +50,7 @@ public class UsersViewModel extends BaseViewModel {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(listUserResponse -> {
-                    Log.d(TAG, listUserResponse);
+                    Log.d(TAG, listUserResponse.toString());
                     errorText.set("");
                     listUserStatus.setValue(NetworkStatus.SUCCESS);
                 }, this::handleError));
